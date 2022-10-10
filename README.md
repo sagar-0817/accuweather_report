@@ -7,7 +7,7 @@ An end to end Data Engineering project that:
 - combines and transforms the raw data to be able to power dashboards
 - displays the weather report through various charts in a dashboard
 
-## Architecure
+## Architecture
 ![Architecture](https://github.com/sagar-0817/accuweather_report/blob/main/images/accuweather-architecture.png?raw=true)
 - The last 24 hours weather data is scraped from the Accuweather API in a Cloud Function
 - The scraped data in raw form is processed in the Cloud Function and written to tables (corresponding to each city) in Google BigQuery
