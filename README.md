@@ -22,5 +22,6 @@ An end to end Data Engineering project that:
 ## Notes
 
 - The Cloud Function is scheduled to run every **12 hours** using Cloud Scheduler
+- The purpose of running the Cloud Function every 12 hours (instead of 24 hours) is to have sufficient time to handle any failure(s) in the pipeline
 - The Cloud Function can also be manually triggered
-- The API key required to scrape the data is stored as a secret called **ACCUWEATHER_API_KEY** in Secret Manager
+- The API key required to scrape the data is stored as a **secret** called **ACCUWEATHER_API_KEY** in Secret Manager
