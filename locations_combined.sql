@@ -1,5 +1,5 @@
 SELECT
-PARSE_TIMESTAMP("%Y-%m-%dT%H:%M:%S%Ez", local_observation_datetime) as observation_datetime_utc,
+PARSE_TIMESTAMP("%Y-%m-%dT%H:%M:%S%Ez", local_observation_datetime) as observation_datetime_utc, -- Parse the timestamp column
 city,
 weather_text as weather_type,
 has_precipitation,
@@ -8,6 +8,8 @@ is_day_time,
 temperature_celcius,
 temperature_fahrenheit
 FROM (
+  -- Combine data of all 5 cities
+
   SELECT *,
   "Bengaluru" as city
   FROM `ocean-data-engg.accuweather_data.bengaluru`
@@ -36,4 +38,5 @@ FROM (
   "Kolkata" as city
   FROM `ocean-data-engg.accuweather_data.kolkata`
 )
+-- Deduplicate the data
 QUALIFY ROW_NUMBER() OVER (PARTITION BY local_observation_datetime, city) = 1
