@@ -18,3 +18,9 @@ An end to end Data Engineering project that:
 [Accuweather Report](https://datastudio.google.com/reporting/faa637b5-de05-4d32-8cc6-0cb1bc996507)
 
 ![Dashboard - Sample Preview](https://github.com/sagar-0817/accuweather_report/blob/main/images/dashboard-sample-preview.png?raw=true)
+
+## Notes
+
+- The Cloud Function is scheduled to run every **12 hours** using Cloud Scheduler
+- The Cloud Function can also be manually triggered
+- The API key required to scrape the data is stored as a secret called **ACCUWEATHER_API_KEY** in Secret Manager
