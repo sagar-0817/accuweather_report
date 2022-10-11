@@ -19,6 +19,17 @@ An end to end Data Engineering project implemented on Google Cloud Platform that
 
 ![Dashboard - Sample Preview](https://github.com/sagar-0817/accuweather_report/blob/main/images/dashboard-sample-preview.png?raw=true)
 
+## Project Contents
+
+- [main.py](https://github.com/sagar-0817/accuweather_report/blob/main/main.py)
+    - the python script implemented as an **HTTP triggered Cloud Function** scrapes the weather data, processes the raw data and stores the processed data in BigQuery
+    - a detailed explanation of the Cloud Function is mentioned as comments in the script
+- [requirements.txt](https://github.com/sagar-0817/accuweather_report/blob/main/requirements.txt)
+   - contains the packages required to run the script
+- [locations_combined.sql](https://github.com/sagar-0817/accuweather_report/blob/main/locations_combined.sql)
+    - the SQL script contains the query that combines the weather data of all locations, performs deduplication and processes the data
+    - the query is saved as a view which is materialized to power the dashboard
+
 ## Notes
 
 - The Cloud Function is scheduled to run every **12 hours** using Cloud Scheduler
